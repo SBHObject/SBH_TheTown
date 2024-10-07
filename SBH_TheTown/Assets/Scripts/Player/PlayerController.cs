@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     //키보드 입력을 받을 컴포넌트
     private PlayerInput _input;
-    //오브젝트를 움직일 컴포넌트
-    private CharacterController _controller;
     //이 오브젝트의 콜라이더
     private BoxCollider2D _collider;
 
@@ -31,8 +29,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //컴포넌트 가져오기
-        _controller = GetComponent<CharacterController>();
         _input = GetComponent<PlayerInput>();
         _collider = GetComponent<BoxCollider2D>();
     }
