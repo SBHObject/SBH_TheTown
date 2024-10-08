@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
         _input = GetComponent<PlayerInput>();
         _collider = GetComponent<BoxCollider2D>();
         m_Camera = Camera.main;
-        FindAnimator();
+        animator = GetComponentInChildren<Animator>();
+
+        //유니티 이벤트 등록
+        CharSelectManager.OnCharChange += SetAnimator;
     }
 
     private void Update()
@@ -46,7 +49,11 @@ public class PlayerController : MonoBehaviour
         //카메라 플레이어에게 고정
         m_Camera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
         Move();
-        SetAnimation();
+
+        if (animator != null)
+        {
+            SetAnimation();
+        }
     }
 
     private void Move()
@@ -82,14 +89,15 @@ public class PlayerController : MonoBehaviour
 
     private void SetAnimation()
     {
+        Debug.Log("애니메이터 작동중");
         animator.SetInteger("MoveX", (int)_input.move.x);
         animator.SetInteger("MoveY", (int)_input.move.y);
     }
 
-    //애니메이터 찾기, 게임 시작과 캐릭터 변경시 호출
-    private void FindAnimator()
+    //애니메이터 지정, 캐릭터 변경시 호출
+    private void SetAnimator(Animator newAnimator)
     {
-        //자식 오브젝트에서 애니메이터를 찾음
-        animator = GetComponentInChildren<Animator>();
+        //캐릭터 프리팹의 애니메이터를 받아서 사용
+        animator = newAnimator;
     }
 }
