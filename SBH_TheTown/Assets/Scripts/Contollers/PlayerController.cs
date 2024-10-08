@@ -30,12 +30,15 @@ public class PlayerController : MonoBehaviour
     //플레이어가 움직이는 속도
     private float moveSpeed = 10f;
 
+    private Animator animator;
+
     private void Start()
     {
         //컴포넌트 가져오기
         _input = GetComponent<PlayerInput>();
         _collider = GetComponent<BoxCollider2D>();
         m_Camera = Camera.main;
+        FindAnimator();
     }
 
     private void Update()
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
         //카메라 플레이어에게 고정
         m_Camera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
         Move();
+        SetAnimation();
     }
 
     private void Move()
@@ -74,5 +78,18 @@ public class PlayerController : MonoBehaviour
 
         //이동 처리
         transform.Translate(realMove * moveSpeed * Time.deltaTime);
+    }
+
+    private void SetAnimation()
+    {
+        animator.SetInteger("MoveX", (int)_input.move.x);
+        animator.SetInteger("MoveY", (int)_input.move.y);
+    }
+
+    //애니메이터 찾기, 게임 시작과 캐릭터 변경시 호출
+    private void FindAnimator()
+    {
+        //자식 오브젝트에서 애니메이터를 찾음
+        animator = GetComponentInChildren<Animator>();
     }
 }
