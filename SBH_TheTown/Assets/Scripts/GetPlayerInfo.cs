@@ -23,4 +23,15 @@ public class GetPlayerInfo : MonoBehaviour
     {
         playerInfo.SetInfo(selectedChar, nameInputField.text);
     }
+
+    //캐릭터 선택후, 넘겨주기
+    public void CharacterSelect(GameObject select)
+    {
+        selectedChar = select;
+    }
+
+    public void OpenSelectUI()
+    {
+
+    }
 }
