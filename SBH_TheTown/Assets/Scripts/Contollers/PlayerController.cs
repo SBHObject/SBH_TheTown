@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //메인 카메라
+    private Camera m_Camera;
+
     //키보드 입력을 받을 컴포넌트
     private PlayerInput _input;
     //이 오브젝트의 콜라이더
@@ -29,12 +32,16 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //컴포넌트 가져오기
         _input = GetComponent<PlayerInput>();
         _collider = GetComponent<BoxCollider2D>();
+        m_Camera = Camera.main;
     }
 
     private void Update()
     {
+        //카메라 플레이어에게 고정
+        m_Camera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
         Move();
     }
 
@@ -67,6 +74,5 @@ public class PlayerController : MonoBehaviour
 
         //이동 처리
         transform.Translate(realMove * moveSpeed * Time.deltaTime);
-
     }
 }
