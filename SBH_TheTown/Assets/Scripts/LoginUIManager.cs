@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LoginUIManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class LoginUIManager : MonoBehaviour
     [SerializeField]
     private Image selectedCharImage;
     
-    //캐릭터 정보를 저장하는 스크립터블 오브젝트
+    //플레이어 정보를 저장하는 스크립터블 오브젝트
     [SerializeField]
     private PlayerDataObject playerData;
 
@@ -23,6 +24,8 @@ public class LoginUIManager : MonoBehaviour
     private CharacterDatabase charDatabase;
     //현재 캐릭터 정보
     private CharacterData selectedCharData;
+
+    public TextMeshProUGUI playerNameInput;
 
     private void Start()
     {
@@ -65,5 +68,18 @@ public class LoginUIManager : MonoBehaviour
         selectedCharData = character;
         playerData.PlayerDataChange(character);
         selectedCharImage.sprite = character.characterImage;
+    }
+
+    //로그인 버튼 선택시 작동
+    public void LogIn()
+    {
+        //플레이어의 이름 저장
+        if (playerNameInput.text != "")
+        {
+            playerData.playerName = playerNameInput.text;
+        }
+
+        //메인씬으로 이동
+        SceneManager.LoadScene("MainScene");
     }
 }
