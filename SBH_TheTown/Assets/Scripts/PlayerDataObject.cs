@@ -23,4 +23,9 @@ public class PlayerDataObject : ScriptableObject
         data = changeData;
         characterPrefab = changeData.characterPrefab;
     }
+
+    public void PlayerNameChange(string name)
+    {
+        playerName = name;
+    }
 }

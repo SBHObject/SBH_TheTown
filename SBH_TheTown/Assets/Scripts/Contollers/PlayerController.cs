@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
     //플레이어가 움직이는 속도
     private float moveSpeed = 10f;
 
+    //애니메이터
     private Animator animator;
+    private PlayerCharacterManager characterManager;
 
     private void Start()
     {
@@ -39,9 +41,10 @@ public class PlayerController : MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
         m_Camera = Camera.main;
         animator = GetComponentInChildren<Animator>();
+        characterManager = GetComponent<PlayerCharacterManager>();
 
         //유니티 이벤트 등록
-        CharSelectManager.OnCharChange += SetAnimator;
+        characterManager.OnCharChange += SetAnimator;
     }
 
     private void Update()
@@ -89,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
     private void SetAnimation()
     {
-        Debug.Log("애니메이터 작동중");
         animator.SetInteger("MoveX", (int)_input.move.x);
         animator.SetInteger("MoveY", (int)_input.move.y);
     }
