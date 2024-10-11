@@ -67,5 +67,11 @@ public class PlayerInput : MonoBehaviour
     private void DialogOpenMoveControll(bool isUiOpen)
     {
         CanMove = !isUiOpen;
+
+        //움직임 정지
+        if(isUiOpen)
+        {
+            move = new Vector2(0, 0);
+        }
     }
 }

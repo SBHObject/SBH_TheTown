@@ -49,7 +49,7 @@ public class NpcController : MonoBehaviour, IInteractive
         {
             interactionInfo.SetActive(false);
             //상호작용 불가능
-            collision.GetComponent<PlayerController>().CanInteracte = true;
+            collision.GetComponent<PlayerController>().CanInteracte = false;
         }
     }
 
