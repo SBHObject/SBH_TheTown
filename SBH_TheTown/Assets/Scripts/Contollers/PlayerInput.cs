@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
 {
     //인풋 시스템으로부터 값을 가져올 변수들
     public Vector2 move;
-    public bool jump;
+    public bool interacte;
 
     public bool CanMove { get; set; } = true;
 
@@ -19,9 +19,9 @@ public class PlayerInput : MonoBehaviour
     }
 
     //스페이스바 입력시 bool 값 매개변수로 받음
-    public void OnJump(InputValue value)
+    public void OnInteracte(InputValue value)
     {
-        JumpInput(value.isPressed);
+        InteracteInput(value.isPressed);
     }
 
     //입력받은 값을 변수로 전달
@@ -34,11 +34,11 @@ public class PlayerInput : MonoBehaviour
     }
 
     //입력받은 값을 변수로 전달
-    public void JumpInput(bool jumpState)
+    public void InteracteInput(bool interacteState)
     {
         if (CanMove)
         {
-            jump = jumpState;
+            interacte = interacteState;
         }
     }
 }

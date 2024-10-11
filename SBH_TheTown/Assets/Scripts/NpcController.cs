@@ -12,9 +12,6 @@ public class NpcController : MonoBehaviour
     //상호작용 가능시, 이를 알려주는 텍스트 오브젝트
     public GameObject interactionInfo;
 
-    //상호작용 가능 여부
-    private bool canInteractive = false;
-
     //NPC 정보
     public NpcDataObject npcData;
 
@@ -33,7 +30,8 @@ public class NpcController : MonoBehaviour
         if (collision.tag == "Player")
         {
             interactionInfo.SetActive(true);
-            canInteractive = true;
+            //상호작용 가능
+            collision.GetComponent<PlayerController>().CanInteracte = true;
         }
     }
 
@@ -42,7 +40,8 @@ public class NpcController : MonoBehaviour
         if (collision.tag == "Player")
         {
             interactionInfo.SetActive(false);
-            canInteractive = false;
+            //상호작용 불가능
+            collision.GetComponent<PlayerController>().CanInteracte = true;
         }
     }
 }

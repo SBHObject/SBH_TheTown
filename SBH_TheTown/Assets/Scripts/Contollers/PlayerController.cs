@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private PlayerCharacterManager characterManager;
 
+    //상호작용 가능 여부
+    public bool CanInteracte { get; set; } = false;
+
     private void Start()
     {
         //컴포넌트 가져오기
@@ -56,6 +59,12 @@ public class PlayerController : MonoBehaviour
         if (animator != null)
         {
             SetAnimation();
+        }
+
+        //상호작용, 상호작용이 가능하면서, 스페이스바를 눌러야 작동
+        if (CanInteracte && _input.interacte)
+        {
+            //상호작용 UI 생성
         }
     }
 
