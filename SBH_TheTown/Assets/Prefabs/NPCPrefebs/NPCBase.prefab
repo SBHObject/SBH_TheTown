@@ -792,3 +792,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionInfo: {fileID: 6122071946725417594}
+  npcData: {fileID: 0}

@@ -14,6 +14,9 @@ public class NpcController : MonoBehaviour
     //상호작용 가능 여부
     private bool canInteractive = false;
 
+    //NPC 정보
+    public NpcDataObject npcData;
+
     private void Start()
     {
         //트리거 가져오기
