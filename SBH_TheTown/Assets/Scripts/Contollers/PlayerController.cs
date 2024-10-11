@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     //상호작용 가능 여부
     public bool CanInteracte { get; set; } = false;
 
+    private IInteractive interacteObject;
+
     private void Start()
     {
         //컴포넌트 가져오기
@@ -64,7 +66,8 @@ public class PlayerController : MonoBehaviour
         //상호작용, 상호작용이 가능하면서, 스페이스바를 눌러야 작동
         if (CanInteracte && _input.interacte)
         {
-            //상호작용 UI 생성
+            //상호작용 UI 활성화
+            interacteObject.InteracteAction();
         }
     }
 
@@ -110,5 +113,11 @@ public class PlayerController : MonoBehaviour
     {
         //캐릭터 프리팹의 애니메이터를 받아서 사용
         animator = newAnimator;
+    }
+
+    //상호작용 대상의 함수 호출용 객체
+    public void GetInteracteObject(IInteractive interactive)
+    {
+        interacteObject = interactive;
     }
 }

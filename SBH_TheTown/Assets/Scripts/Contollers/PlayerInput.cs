@@ -10,7 +10,31 @@ public class PlayerInput : MonoBehaviour
     public Vector2 move;
     public bool interacte;
 
+    //상호작용 관련 - 1회만 작동하게 만들기
+    private bool tempInteracte;
+    private bool pressed = false;
+
     public bool CanMove { get; set; } = true;
+
+    private void Start()
+    {
+        SequenceUIManager.Instance.OnUIOpen += DialogOpenMoveControll; 
+    }
+
+    private void Update()
+    {
+        //스페이스바를 누르면 1회만 true를 넘겨주는 매커니즘
+        if(tempInteracte != pressed)
+        {
+            interacte = true;
+        }
+        else
+        {
+            interacte = false;
+        }
+
+        tempInteracte = false;
+    }
 
     //화살표 입력시 Vector2 값 매개변수로 받음
     public void OnMove(InputValue value)
@@ -36,9 +60,12 @@ public class PlayerInput : MonoBehaviour
     //입력받은 값을 변수로 전달
     public void InteracteInput(bool interacteState)
     {
-        if (CanMove)
-        {
-            interacte = interacteState;
-        }
+        tempInteracte = interacteState;
+    }
+
+    //대화 UI에 따른 이동 활성화, 비활성화
+    private void DialogOpenMoveControll(bool isUiOpen)
+    {
+        CanMove = !isUiOpen;
     }
 }

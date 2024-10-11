@@ -137,7 +137,7 @@
                     "name": "",
                     "id": "2b97e73f-c0d9-404d-a5f7-e165d05f3519",
                     "path": "<Keyboard>/space",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "TopDownControllScheme",
                     "action": "Interacte",
