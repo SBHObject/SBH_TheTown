@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 //Npc 스크립트, 상호작용 관리
@@ -17,10 +18,13 @@ public class NpcController : MonoBehaviour
     //NPC 정보
     public NpcDataObject npcData;
 
+    public TextMeshProUGUI npcNameTextbox;
+
     private void Start()
     {
         //트리거 가져오기
         m_Collider = GetComponent<BoxCollider2D>();
+        npcNameTextbox.text = npcData.npcName;
     }
 
     //범위 내에 들어오면 상호작용 가능

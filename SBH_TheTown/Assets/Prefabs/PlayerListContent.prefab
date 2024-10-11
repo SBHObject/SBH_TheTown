@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7331206923523887332}
   - component: {fileID: 1218151022763291981}
+  - component: {fileID: 478490962387041722}
   m_Layer: 5
   m_Name: PlayerListContent
   m_TagString: Untagged
@@ -57,6 +58,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &478490962387041722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182468412008538877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f93bb32fe1e0e8409ff0a129ac9f5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNameTextbox: {fileID: 2060068064610481725}
+  playerImage: {fileID: 5592171283198043781}
 --- !u!1 &3564194528925515944
 GameObject:
   m_ObjectHideFlags: 0

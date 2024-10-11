@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Character/PlayerData")]
 public class PlayerDataObject : ScriptableObject
@@ -11,7 +12,9 @@ public class PlayerDataObject : ScriptableObject
     public GameObject characterPrefab;
     //플레이어 이름
     public string playerName;
-    
+
+    public UnityAction OnInfoChanged;
+
     public PlayerDataObject(CharacterData _data)
     {
         data = _data;
@@ -22,10 +25,13 @@ public class PlayerDataObject : ScriptableObject
     {
         data = changeData;
         characterPrefab = changeData.characterPrefab;
+
+        OnInfoChanged?.Invoke();
     }
 
     public void PlayerNameChange(string name)
     {
         playerName = name;
+        OnInfoChanged?.Invoke();
     }
 }
