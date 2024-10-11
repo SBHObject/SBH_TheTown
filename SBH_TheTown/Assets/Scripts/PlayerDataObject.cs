@@ -11,7 +11,7 @@ public class PlayerDataObject : ScriptableObject
     public GameObject characterPrefab;
     //플레이어 이름
     public string playerName;
-
+    
     public PlayerDataObject(CharacterData _data)
     {
         data = _data;
