@@ -27,12 +27,12 @@ public class PlayerCharacterManager : MonoBehaviour
     private void Start()
     {
         //데이터로부터 선택한 캐릭터 가져오기
-        SetPlayerChar(playerData.data);
+        SetPlayerChar();
         //데이터로부터 이름 가져오기
         nameText.text = playerData.playerName;
     }
 
-    public void SetPlayerChar(CharacterData character)
+    public void SetPlayerChar()
     {
         //기존 오브젝트가 있으면 삭제
         if (nowChar != null)
@@ -42,7 +42,7 @@ public class PlayerCharacterManager : MonoBehaviour
         }
 
         //선택한 캐릭터 오브젝트 생성
-        nowChar = Instantiate(character.characterPrefab, playerCharPosition.transform);
+        nowChar = Instantiate(playerData.characterPrefab, playerCharPosition.transform);
 
         //생성한 캐릭터 오브젝트의 애니메이터 컴포넌트를 넘겨줌
         OnCharChange?.Invoke(nowChar.GetComponent<Animator>());

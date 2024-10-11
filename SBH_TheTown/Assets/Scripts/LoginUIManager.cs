@@ -14,20 +14,20 @@ public class LoginUIManager : MonoBehaviour
     //선택된 캐릭터 이미지 표기
     [SerializeField]
     private Image selectedCharImage;
-    
+
     //플레이어 정보를 저장하는 스크립터블 오브젝트
     [SerializeField]
-    private PlayerDataObject playerData;
+    protected PlayerDataObject playerData;
 
     //캐릭터 정보 데이터베이스
     [SerializeField]
     private CharacterDatabase charDatabase;
     //현재 캐릭터 정보
-    private CharacterData selectedCharData;
+    protected CharacterData selectedCharData;
 
     public TextMeshProUGUI playerNameInput;
 
-    private void Start()
+    protected virtual void Start()
     {
         selectedCharData = playerData.data;
         //캐릭터 이미지 표기
@@ -63,7 +63,7 @@ public class LoginUIManager : MonoBehaviour
     }
 
     //캐릭터 선택 버튼, 정보를 동시에 넘겨주기
-    public void CharacterSelect(CharacterData character)
+    public virtual void CharacterSelect(CharacterData character)
     {
         selectedCharData = character;
         playerData.PlayerDataChange(character);
