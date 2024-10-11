@@ -48,9 +48,8 @@ public class PlayerCharacterManager : MonoBehaviour
         OnCharChange?.Invoke(nowChar.GetComponent<Animator>());
     }
 
-    public void ChangePlayerName(string name)
+    public void ChangePlayerName()
     {
-        playerData.PlayerNameChange(name);
         nameText.text = playerData.playerName;
     }
 }

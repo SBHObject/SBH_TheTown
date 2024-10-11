@@ -10,6 +10,8 @@ public class PlayerInput : MonoBehaviour
     public Vector2 move;
     public bool jump;
 
+    public bool CanMove { get; set; } = true;
+
     //화살표 입력시 Vector2 값 매개변수로 받음
     public void OnMove(InputValue value)
     {
@@ -25,12 +27,18 @@ public class PlayerInput : MonoBehaviour
     //입력받은 값을 변수로 전달
     public void MoveInput(Vector2 moveDirection)
     {
-        move = moveDirection;
+        if (CanMove)
+        {
+            move = moveDirection;
+        }
     }
 
     //입력받은 값을 변수로 전달
     public void JumpInput(bool jumpState)
     {
-        jump = jumpState;
+        if (CanMove)
+        {
+            jump = jumpState;
+        }
     }
 }

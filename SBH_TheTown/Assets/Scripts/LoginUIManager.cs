@@ -24,7 +24,7 @@ public class LoginUIManager : MonoBehaviour
     private CharacterDatabase charDatabase;
     //현재 캐릭터 정보
     protected CharacterData selectedCharData;
-
+    //플레이어의 이름을 입력하는 칸
     public TextMeshProUGUI playerNameInput;
 
     protected virtual void Start()
@@ -35,7 +35,7 @@ public class LoginUIManager : MonoBehaviour
     }
 
     //캐릭터 선택 UI 켜기,끄기
-    public void OpenCharSelectUI()
+    public virtual void OpenCharSelectUI()
     {
         //켜져있으면 끄고, 꺼져있으면 키기
         if(charSelectUI.activeSelf)
