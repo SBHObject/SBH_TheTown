@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             //상호작용 UI 활성화
             interacteObject.InteracteAction();
+            Debug.Log("입력");
         }
     }
 

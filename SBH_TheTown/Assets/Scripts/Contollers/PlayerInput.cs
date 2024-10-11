@@ -8,11 +8,10 @@ public class PlayerInput : MonoBehaviour
 {
     //인풋 시스템으로부터 값을 가져올 변수들
     public Vector2 move;
-    public bool interacte;
+    public bool interacte = false;
 
     //상호작용 관련 - 1회만 작동하게 만들기
-    private bool tempInteracte;
-    private bool pressed = false;
+    private bool tempInteracte = false;
 
     public bool CanMove { get; set; } = true;
 
@@ -24,7 +23,7 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         //스페이스바를 누르면 1회만 true를 넘겨주는 매커니즘
-        if(tempInteracte != pressed)
+        if (tempInteracte == true && interacte != tempInteracte)
         {
             interacte = true;
         }
@@ -46,6 +45,7 @@ public class PlayerInput : MonoBehaviour
     public void OnInteracte(InputValue value)
     {
         InteracteInput(value.isPressed);
+        Debug.Log(value.isPressed);
     }
 
     //입력받은 값을 변수로 전달
