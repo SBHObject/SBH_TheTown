@@ -707,9 +707,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8773767589510376699}
   - component: {fileID: 5367250396231106802}
-  m_Layer: 0
+  - component: {fileID: 5445877040832887373}
+  m_Layer: 8
   m_Name: NPCBase
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,5 +777,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &5445877040832887373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917518393040711661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800e0148a1d726648a92ed4392404e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionInfo: {fileID: 6122071946725417594}
