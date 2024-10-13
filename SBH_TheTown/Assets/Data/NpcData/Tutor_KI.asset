@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af872f0988f3f3540aa3a3322be255f6, type: 3}
+  m_Name: Tutor_KI
+  m_EditorClassIdentifier: 
+  npcSprite: {fileID: 21300000, guid: bc7846a31aa229f4a9cf4078b1154b1e, type: 3}
+  npcName: "\uAC15\uC778 \uD29C\uD130"

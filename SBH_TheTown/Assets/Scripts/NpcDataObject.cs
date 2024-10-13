@@ -9,6 +9,4 @@ public class NpcDataObject : ScriptableObject
     public Sprite npcSprite;
     //NPC 의 이름
     public string npcName;
-    //NPC 가 사용할 프리팹
-    public GameObject npcPrefab;
 }
