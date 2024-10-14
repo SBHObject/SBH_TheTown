@@ -42,6 +42,7 @@ public class SequenceUIManager : MonoBehaviour
     public Image npcImage;
     public TextMeshProUGUI npcNameText;
     public TextMeshProUGUI sequenceText;
+    public TextMeshProUGUI dialogText;
 
     //대화창이 활성화,비활성화 되면 이벤트 발생
     public UnityAction<bool> OnUIOpen;
@@ -49,18 +50,24 @@ public class SequenceUIManager : MonoBehaviour
     //NPC로부터 정보 받아오기
     public void InteracteNpc(NpcDataObject npcData)
     {
+        //대화창 구성, 이름, 이미지, 대사 적용하기
         npcImage.sprite = npcData.npcSprite;
         npcNameText.text = npcData.npcName;
+        dialogText.text = npcData.npcDialog;
 
+        //UI 활성화시 작동 이벤트 - 이동 불가능
         OnUIOpen?.Invoke(true);
 
+        //UI 활성화
         DialogUI.SetActive(true);
     }
 
     public void CloseDialogUI()
     {
+        //UI 비활성화
         DialogUI.SetActive(false);
 
+        //이동 가능하도록 풀어주기
         OnUIOpen?.Invoke(false);
     }
 }

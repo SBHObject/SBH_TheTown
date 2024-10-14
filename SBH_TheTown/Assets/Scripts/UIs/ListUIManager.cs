@@ -36,6 +36,6 @@ public class ListUIManager : MonoBehaviour
         }
 
         GameObject playerUI = Instantiate(playerListContentPrefab, playerListUI.transform);
-        playerUI.GetComponent<PlayerListUIInfo>().SetPlayerData(playerData);
+        playerUI.GetComponent<PlayerListUIInfo>().GetPlayerData(playerData);
     }
 }

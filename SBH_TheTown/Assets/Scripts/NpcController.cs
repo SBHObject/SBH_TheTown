@@ -15,7 +15,6 @@ public class NpcController : MonoBehaviour, IInteractive
 
     //NPC 정보
     public NpcDataObject npcData;
-
     public TextMeshProUGUI npcNameTextbox;
 
     //대화창을 다루는 스크립트

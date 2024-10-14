@@ -9,4 +9,8 @@ public class NpcDataObject : ScriptableObject
     public Sprite npcSprite;
     //NPC 의 이름
     public string npcName;
+
+    //NPC 대사
+    [TextArea(15, 20)]
+    public string npcDialog;
 }

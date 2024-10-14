@@ -21,17 +21,22 @@ public class PlayerDataObject : ScriptableObject
         characterPrefab = data.characterPrefab;
     }
 
+    //플레이어 캐릭터 변경시, 데이터 변경
     public void PlayerDataChange(CharacterData changeData)
     {
         data = changeData;
         characterPrefab = changeData.characterPrefab;
 
+        //UI 변경을 위한 이벤트
         OnInfoChanged?.Invoke();
     }
 
+    //플레이어 이름 변경시, 데이터 오브젝트 변경
     public void PlayerNameChange(string name)
     {
         playerName = name;
+
+        //UI 변경을 위한 이벤트
         OnInfoChanged?.Invoke();
     }
 }

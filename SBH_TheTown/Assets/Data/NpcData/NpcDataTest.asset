@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcSprite: {fileID: 21300000, guid: fac56a0ae4f302a4d9be533109c327f9, type: 2}
   npcName: "\uD14C\uC2A4\uD2B8NPC"
-  npcPrefab: {fileID: 7917518393040711661, guid: b696597a94db615419cfdc89788bcd94, type: 3}
+  npcDialog: "NPC \uC0C1\uD638\uC791\uC6A9 \uD14C\uC2A4\uD2B8\uC6A9 NPC \uC785\uB2C8\uB2E4."

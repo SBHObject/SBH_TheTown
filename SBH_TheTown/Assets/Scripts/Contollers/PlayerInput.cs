@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
+        //이벤트 함수등록(이동 불가능)
         SequenceUIManager.Instance.OnUIOpen += DialogOpenMoveControll; 
     }
 

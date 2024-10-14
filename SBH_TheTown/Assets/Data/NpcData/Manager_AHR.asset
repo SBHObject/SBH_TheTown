@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcSprite: {fileID: 21300000, guid: 3ee7c1a18ae31a74fa6cd480c39825cf, type: 3}
   npcName: "\uC548\uD61C\uB9B0 \uB9E4\uB2C8\uC800"
+  npcDialog: 
